@@ -7,7 +7,7 @@ import Logo from './logo'
 import Dropdown from '@/components/utils/dropdown'
 import MobileMenu from './mobile-menu'
 
-import { PowerIcon } from '@heroicons/react/24/outline';
+import { PowerIcon } from '@heroicons/react/20/solid';
 import { logOut } from '@/app/lib/actions'
 
 export default function Header(props: {
@@ -28,7 +28,7 @@ export default function Header(props: {
   }, [top])
 
   return (
-    <header className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top ? 'bg-white backdrop-blur-sm shadow-lg' : ''}`}>
+    <header className={`sticky top-0 w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top ? 'bg-white backdrop-blur-sm shadow-lg' : ''}`}>
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
 
@@ -43,33 +43,42 @@ export default function Header(props: {
             <ul className="flex grow justify-end flex-wrap items-center">
               {
                 user?.email && (
-                  <li>
+                  <Dropdown
+                    title={user?.email}
+                  >
                     <form
+                      className='w-full'
                       action={
                         logOut
                       }
                     >
-                      <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3">
-                        <PowerIcon className="w-6" />
-                        <div className="hidden md:block">{
-                          user?.email
-                        }</div>
+                      <button 
+                        className="flex w-full grow items-center justify-center gap-2 rounded-md p-1 text-sm font-medium hover:bg-sky-400 hover:text-white md:flex-none md:justify-start md:p-2 md:px-3"
+                      >
+                        <PowerIcon className="w-4" />
+                        Logout
                       </button>
                     </form>
-                  </li>
+                  </Dropdown>
                 )
               }
-              <li>
-                <Link href="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
-              </li>
-              <li>
-                <Link href="/signup" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
-                  <span>Sign up</span>
-                  <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
-                  </svg>
-                </Link>
-              </li>
+              {
+                !user?.email && (
+                  <>
+                    <li>
+                      <Link href="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
+                    </li>
+                    <li>
+                      <Link href="/signup" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
+                        <span>Sign up</span>
+                        <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
+                        </svg>
+                      </Link>
+                    </li>
+                  </>
+                )
+              }
             </ul>
 
           </nav>

@@ -67,6 +67,15 @@ This template has been developed with the App Router (`app`) and React Server Co
 
 For more information about what support covers, please see our (FAQs)[https://cruip.com/faq/].
 
+### Dependencies
+
+#### UI
+
+- [shadcn ui](https://ui.shadcn.com/) Beautifully designed components that you can copy and paste into your apps. Accessible.Customizable. Open Source.
+- [heroicons](https://github.com/tailwindlabs/heroicons) Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS. Available as basic SVG icons and via first-party React and Vue libraries.
+- [headlessui](https://headlessui.com/) Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.
+
+
 ## Credits
 
 - [Nucleo](https://nucleoapp.com/)

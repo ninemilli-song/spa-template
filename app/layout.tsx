@@ -26,7 +26,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-inter antialiased bg-white text-gray-900 tracking-tight`}>
-        <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+        <div className="flex w-full flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
           <Header
             user = {authsession?.user}
           />

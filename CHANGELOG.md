@@ -1,5 +1,9 @@
 # CHANGELOG.md
 
+## [2.5.1] - 2024-4-30
+
+Add shadcn ui component library
+
 ## [2.5.0] - 2024-4-29
 
 Add next-auth credentials providers
