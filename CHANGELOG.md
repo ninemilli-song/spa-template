@@ -1,12 +1,16 @@
 # CHANGELOG.md
 
+## [2.5.2] - 2024-5-21
+
+- Change port to 3002 for development
+
 ## [2.5.1] - 2024-4-30
 
-Add shadcn ui component library
+- Add shadcn ui component library
 
 ## [2.5.0] - 2024-4-29
 
-Add next-auth credentials providers
+- Add next-auth credentials providers
 
 ## [2.4.0] - 2023-12-08
 
