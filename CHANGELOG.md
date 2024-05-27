@@ -1,5 +1,14 @@
 # CHANGELOG.md
 
+## [2.5.3] - 2024-5-24
+
+1. 添加 @supabase/supabase-js
+
+Achieved user login by supabase-js with memfiredb cloud 
+
+2. rename style.css to global.css
+
+
 ## [2.5.2] - 2024-5-21
 
 - Change port to 3002 for development

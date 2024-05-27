@@ -1,11 +1,7 @@
 'use client'
 
 import { authenticate } from '@/app/lib/actions';
-import { Button } from '@/components/ui/button';
-import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import {
-  AtSymbolIcon,
-  KeyIcon,
   ExclamationCircleIcon,
 } from '@heroicons/react/24/outline';
 // export const metadata = {

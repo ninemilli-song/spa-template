@@ -1,4 +1,4 @@
-import './css/style.css'
+import './css/global.css'
 
 import { Inter } from 'next/font/google'
 import {auth} from '@/auth'

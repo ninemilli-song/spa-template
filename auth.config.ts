@@ -7,7 +7,6 @@ export const authConfig = {
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
-      console.log('pathname: toJSON ' + JSON.stringify(auth))
       const isOnDashboard = nextUrl.pathname.startsWith('/dashboard');
       const isOnSignin = nextUrl.pathname.startsWith('/signin');
       const isOnSignup = nextUrl.pathname.startsWith('/singup');
@@ -26,19 +25,19 @@ export const authConfig = {
       }
       return true;
     },
-    async signIn({user, account, profile, email, credentials}) {
-      console.log(`callbacks signIn invoked user: ${JSON.stringify(user)}`)
-      console.log(`callbacks signIn invoked credentials: ${JSON.stringify(credentials)}`)
-      // return credentials?.callbackUrl as string;
-      // return '/dashboard';
-      return true;
-    },
-    async redirect({url, baseUrl}) {
-      console.log(`callbacks redirect invoked: ${JSON.stringify(url)}`)
-      return url.startsWith(baseUrl)
-        ? Promise.resolve(url)
-        : Promise.resolve(baseUrl);
-    }
+    // async signIn({user, account, profile, email, credentials}) {
+    //   console.log(`callbacks signIn invoked user: ${JSON.stringify(user)}`)
+    //   console.log(`callbacks signIn invoked credentials: ${JSON.stringify(credentials)}`)
+    //   // return credentials?.callbackUrl as string;
+    //   // return '/dashboard';
+    //   return true;
+    // },
+    // async redirect({url, baseUrl}) {
+    //   console.log(`callbacks redirect invoked: ${JSON.stringify(url)}`)
+    //   return url.startsWith(baseUrl)
+    //     ? Promise.resolve(url)
+    //     : Promise.resolve(baseUrl);
+    // }
   },
   // secret: 'RSBrOJIBX64vUQj6ygx1QYKfflS2poa+/oLchKvwWZQ=',
   providers: [], // Add providers with an empty array for now

@@ -9,14 +9,15 @@ export async function authenticate(
 ) {
   try {
     console.log('authenticate', formData.get('email'), formData.get('password'));
-    await signIn('credentials', formData).then((response) => {
-      console.log('authenticated signIn then response: ', response);
-    });
+    await signIn('credentials', formData, {
+      callbackUrl: '/dashboard'
+    })
   } catch (error) {
     if (error instanceof AuthError) {
+      console.log('action catch error: ', error)
       switch (error.type) {
         case 'CredentialsSignin':
-          return 'Invalid credentials.';
+          return 'Invalid email or password.';
         default:
           return 'Something went wrong.';
       }
